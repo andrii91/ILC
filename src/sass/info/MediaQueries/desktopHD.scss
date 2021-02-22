@@ -1,8 +1,43 @@
 @import '../../mq';
 
 @media #{$desktopHD} {
-    @import '../desktop';
-    & {
+  @import '../desktop';
 
+  & {
+    #tab2 {
+      .section_map-points {
+
+
+        li {
+
+          &:nth-child(10) {
+            display: flex;
+            top: vw(344px);
+            right: vw(135px);
+            //      width: vw(70.17px);
+          }
+           &:nth-child(13) {
+        padding-left: vw(51px);
+          }
+
+
+        }
+      }
     }
+
+    #tab2 .section_map-points li:nth-child(9) {
+      left: 75.402778vw;
+    }
+    .sea-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 47px;
+  width: 44px;
+  img {
+    margin: 0;
+    
+  }
+}
+  }
 }

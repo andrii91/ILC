@@ -8,7 +8,6 @@ void 0!==c?null===c?void r.removeAttr(a,b):e&&"set"in e&&void 0!==(d=e.set(a,c,b
 /**
  * jQuery.marquee - scrolling text like old marquee element
  * @author Aamir Afridi - aamirafridi(at)gmail(dot)com / http://aamirafridi.com/jquery/jquery-marquee-plugin
- */
 (function($){$.fn.marquee=function(options){return this.each(function(){var o=$.extend({},$.fn.marquee.defaults,options),$this=$(this),$marqueeWrapper,containerWidth,animationCss,verticalDir,elWidth,loopCount=3,playState='animation-play-state',css3AnimationIsSupported=!1,_prefixedEvent=function(element,type,callback){var pfx=["webkit","moz","MS","o",""];for(var p=0;p<pfx.length;p++){if(!pfx[p])type=type.toLowerCase();element.addEventListener(pfx[p]+type,callback,!1)}},_objToString=function(obj){var tabjson=[];for(var p in obj){if(obj.hasOwnProperty(p)){tabjson.push(p+':'+obj[p])}}
 tabjson.push();return'{'+tabjson.join(',')+'}'},_startAnimationWithDelay=function(){$this.timer=setTimeout(animate,o.delayBeforeStart)},methods={pause:function(){if(css3AnimationIsSupported&&o.allowCss3Support){$marqueeWrapper.css(playState,'paused')}else{if($.fn.pause){$marqueeWrapper.pause()}}
 $this.data('runningStatus','paused');$this.trigger('paused')},resume:function(){if(css3AnimationIsSupported&&o.allowCss3Support){$marqueeWrapper.css(playState,'running')}else{if($.fn.resume){$marqueeWrapper.resume()}}
@@ -43,3 +42,5 @@ $this.trigger('beforeStarting');if(css3AnimationIsSupported){$marqueeWrapper.css
 _prefixedEvent($marqueeWrapper[0],"AnimationIteration",function(){$this.trigger('finished')});_prefixedEvent($marqueeWrapper[0],"AnimationEnd",function(){animate();$this.trigger('finished')})}else{$marqueeWrapper.animate(animationCss,o.duration,o.easing,function(){$this.trigger('finished');if(o.pauseOnCycle){_startAnimationWithDelay()}else{animate()}})}
 $this.data('runningStatus','resumed')};$this.on('pause',methods.pause);$this.on('resume',methods.resume);if(o.pauseOnHover){$this.on('mouseenter',methods.pause);$this.on('mouseleave',methods.resume)}
 if(css3AnimationIsSupported&&o.allowCss3Support){animate()}else{_startAnimationWithDelay()}})};$.fn.marquee.defaults={allowCss3Support:!0,css3easing:'linear',easing:'linear',delayBeforeStart:1000,direction:'left',duplicated:!1,duration:5000,speed:0,gap:20,pauseOnCycle:!1,pauseOnHover:!1,startVisible:!1}})(jQuery);
+
+ */
