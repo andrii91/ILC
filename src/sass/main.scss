@@ -1287,17 +1287,17 @@ body {
 .hamburger-inner,
 .hamburger-inner:after,
 .hamburger-inner:before {
-  transform: skewX(-5deg);
+//  transform: skewX(-5deg);
   height: 4px;
 }
 
 .hamburger-inner:after {
-  transform: skewX(-10deg) translateX(-2px);
+//  transform: skewX(-10deg) translateX(-2px);
 
 }
 
 .hamburger-inner:before {
-  transform: skewX(-10deg) translateX(-1px);
+//  transform: skewX(-10deg) translateX(-1px);
 
 }
 
