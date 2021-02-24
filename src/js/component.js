@@ -8,10 +8,12 @@ $(document).ready(function () {
     slidesToShow: 1,
     adaptiveHeight: false,
     fade: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
     cssEase: 'linear'
   });
 
-var widthLi = 170;
+  var widthLi = 170;
 
   $('.slider-nav li').click(function () {
     var goToThisIndex = $(this).data("slickIndex");
@@ -19,17 +21,17 @@ var widthLi = 170;
 
     $(this).addClass('active');
     $('.head-slider').slick('slickGoTo', goToThisIndex, false);
-    
-/*    if($(window).width() < 968 ){
-      widthLi = widthLi + $(this).width();
-      
-      if($(this).next().length == 0) {
-        widthLi = 0;
-      }
-      $(this).parent().css({
-        "transform" : "translateX(-"+widthLi+"px)"
-      })
-    }*/
+
+    /*    if($(window).width() < 968 ){
+          widthLi = widthLi + $(this).width();
+          
+          if($(this).next().length == 0) {
+            widthLi = 0;
+          }
+          $(this).parent().css({
+            "transform" : "translateX(-"+widthLi+"px)"
+          })
+        }*/
   });
 
 
@@ -65,13 +67,27 @@ var widthLi = 170;
 
   $('.section_map-nav li ').click(function (e) {
     e.preventDefault();
-    $('.section_map-nav li').removeClass('active');
-    $('.section_map-content .item').removeClass('active');
-    $('.section_map-point').removeClass('active');
-    $(this).addClass('active');
+    var $this = $(this);
+    $('.section_map-content .item').removeClass(' fadeIn').addClass('fadeOut');
+    $('.section_map-point').removeClass('fadeIn').addClass('fadeOut');
 
-    $($(this).find('a').attr('href')).addClass('active');
-    $('[data-tab="'+$(this).find('a').attr('href')+'"]').addClass('active');
+    setTimeout(function () {
+      $('.section_map-nav li').removeClass('active');
+      $('.section_map-content .item').removeClass(' fadeOut active');
+      $('.section_map-point').removeClass('fadeOut active');
+
+
+      $this.addClass('active');
+      $($this.find('a').attr('href')).addClass('active visible animated fadeIn');
+      $('[data-tab="' + $this.find('a').attr('href') + '"]').addClass('active visible animated fadeIn');
+    }, 500)
+
+
+    /* 
+     $(this).addClass('active visible animated fadeIn');
+
+     $($(this).find('a').attr('href')).addClass('active visible animated fadeIn');
+     $('[data-tab="'+$(this).find('a').attr('href')+'"]').addClass('active visible animated fadeIn');*/
   })
 
 
@@ -82,7 +98,7 @@ var widthLi = 170;
 
   function initMap() {
     var element = document.getElementById('map');
-    
+
     if ($(window).width() > 1023) {
       var options = {
         zoom: 16,
@@ -92,12 +108,12 @@ var widthLi = 170;
         }
 
       };
-      
-    }else {
+
+    } else {
       var options = {
         zoom: 17,
         center: {
-           lat: 34.6984635,
+          lat: 34.6984635,
           lng: 33.0607128
         }
 
@@ -181,42 +197,105 @@ var widthLi = 170;
 
   });
 
-  
-  $.fn.make_carousel = function() {
+
+  $.fn.make_carousel = function ($flag) {
     var speed = 0;
     var scroll = 0;
     var container = $(this);
     var container_w = container.width();
     var max_scroll = container[0].scrollWidth - container.outerWidth();
     var prev_frame = new Date().getTime();
-    container.on('mousemove', function(e) {
-        var mouse_x = e.pageX - container.offset().left;
-        var mouseperc = 100 * mouse_x / container_w;
-        speed = mouseperc - 50;
-    }).on ( 'mouseleave', function() {
-        speed = 0;
+    container.on('mousemove', function (e) {
+      var mouse_x = e.pageX - container.offset().left;
+      var mouseperc = 100 * mouse_x / container_w;
+      speed = mouseperc - 50;
+    }).on('mouseleave', function () {
+      speed = 0;
     });
 
     function updatescroll() {
-        var cur_frame = new Date().getTime();
-        var time_elapsed = cur_frame - prev_frame;
-        prev_frame = cur_frame;
-        if (speed !== 0) {
-            scroll += speed * time_elapsed / 50;
-            if (scroll < 0) scroll = 0;
-            if (scroll > max_scroll) scroll = max_scroll;
-            container.scrollLeft(scroll);
-        }
-        window.requestAnimationFrame(updatescroll);
+      var cur_frame = new Date().getTime();
+      var time_elapsed = cur_frame - prev_frame;
+      prev_frame = cur_frame;
+      if (speed !== 0) {
+        scroll += speed * time_elapsed / 50;
+        if (scroll < 0) scroll = 0;
+        if (scroll > max_scroll) scroll = max_scroll;
+        container.scrollLeft(scroll);
+      }
+      window.requestAnimationFrame(updatescroll);
     }
     window.requestAnimationFrame(updatescroll);
-}
-      if($(window).width() > 1200 ){
-        $("#brands").make_carousel();
-        
-      }
-      if($(window).width() < 768 ){
-      $('#menu').prepend('<li><a href="/">Home</a></li>')
+  }
+
+  $(window).resize(function () {
+    if ($(window).width() > 1200) {
+      $("#brands").make_carousel();
+
     }
+
+
+
+    if ($(window).width() < 1100) {
+      $('.section_map-points li').click(function () {
+        $('.section_map-points li .info').hide();
+        $(this).find('.info').show();
+      })
+    } else {
+      $('.section_map-points li .info').show();
+    }
+
+    if ($('div').hasClass('map')) {
+      initMap();
+    }
+
+  })
+
+  if ($(window).width() > 1200) {
+    $("#brands").make_carousel();
+
+  }
+  if ($(window).width() < 768) {
+    $('#menu').prepend('<li id="mobli"><a href="/">Home</a></li>')
+
+  } else {
+    $('#mobli').remove();
+  }
+
+  if ($(window).width() < 1100) {
+
+    $('.section_map-points li').click(function () {
+      $('.section_map-points li .info').hide(200);
+      $(this).find('.info').show(200);
+    })
+  }
+
+
+  var mapInterval = setInterval(function () {
+    $('.section_map-nav li.active').next().trigger('click');
+
+    setTimeout(function () {
+      $('.section_map-nav li.active').prev().trigger('click');
+
+    }, 10000)
+  }, 20000)
+
+
+  $('.section_map-points').hover(function () {
+      clearInterval(mapInterval)
+      console.log('clear')
+    },
+    function () {
+      console.log('clear_false')
+      mapInterval = setInterval(function () {
+        $('.section_map-nav li.active').next().trigger('click');
+
+        setTimeout(function () {
+          $('.section_map-nav li.active').prev().trigger('click');
+
+        }, 10000)
+      }, 20000)
+    })
+
 
 });

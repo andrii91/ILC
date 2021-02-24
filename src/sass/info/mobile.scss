@@ -488,4 +488,28 @@
     top: 21.888889vw;
     left: 84.347222vw;
 }*/
+  
+  
+ .section_map-points li .info {
+    background: rgba(255, 255, 255,.9);
+   padding: 3px;
+   position: relative;
+   z-index: 87;
+   font-size: 10px;
+   line-height: 1;
+   position: absolute;
+   bottom: 100% !important;
+   left: 50% !important;
+   transform: translateX(-50%);
+  }
+  
+  .section_map-points {
+    li {
+      &.factories-item {
+        span {
+//          display: block !important; 
+        }
+      }
+    }
+  }
 }

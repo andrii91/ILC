@@ -4,7 +4,8 @@
   @import '../desktop';
 
   & {
-    #tab2 {
+
+    /*    #tab2 {
       .section_map-points {
 
 
@@ -27,17 +28,18 @@
 
     #tab2 .section_map-points li:nth-child(9) {
       left: 75.402778vw;
-    }
+    }*/
     .sea-group {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 47px;
-  width: 44px;
-  img {
-    margin: 0;
-    
-  }
-}
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 47px;
+      width: 44px;
+
+      img {
+        margin: 0;
+
+      }
+    }
   }
 }
