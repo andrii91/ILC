@@ -7,10 +7,10 @@ $(document).ready(function () {
     speed: 900,
     slidesToShow: 1,
     adaptiveHeight: false,
-    fade: true,
+//    fade: true,
     autoplay: true,
     autoplaySpeed: 5000,
-    cssEase: 'linear'
+//    cssEase: 'linear'
   });
 
   var widthLi = 170;
