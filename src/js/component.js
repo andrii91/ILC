@@ -53,7 +53,7 @@ $(document).ready(function () {
     return $('.nav').toggleClass("fixed", $(window).scrollTop() > 0);
   });
 
-  if ($(window).scrollTop() > 0) {
+  if ($(window).scrollTop() > 30) {
     $('.nav').addClass('fixed');
   }
 

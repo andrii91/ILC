@@ -24,7 +24,7 @@ body {
   left: 0;
   width: 100%;
   z-index: 999;
-  transition: .3s;
+//  transition: .3s;
 
   &.fixed {
     padding: 15px 0;
@@ -86,7 +86,7 @@ body {
 
   img {
     max-width: 202px;
-    transition: .3s;
+//    transition: .3s;
   }
 }
 
