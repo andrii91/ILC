@@ -87,7 +87,7 @@
     min-height: 620px;
     height: 100vh;
     max-width: inherit;
-//    transform: translateX(-50%);
+    //    transform: translateX(-50%);
   }
 
   .nav-owrl {
@@ -97,17 +97,38 @@
     width: 100%;
     left: 0;
     height: 40px;
+    padding-left: 45px;
+    z-index: 997;
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    &:before {
+      content: "";
+      background: rgba(246,118,54,.1);
+      -webkit-backdrop-filter: blur(13.56px);
+      backdrop-filter: blur(13.56px);
+      width: 805px;
+      height: 40px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+    }
   }
 
   .slider-nav {
     max-width: inherit;
-    position: absolute;
-    width: 630px;
+    position: relative;
+    width: 645px;
     top: 0;
-    left: 5.673611vw;
+    left: 0;
     margin: 0;
     z-index: 997;
     text-align: left;
+    &:before {
+      display: none;
+    }
   }
 
   .slider-nav li {
@@ -308,8 +329,8 @@
 
   .section_map-info:after {
     width: 100%;
-        height: 100%;
-//    display: none;
+    height: 100%;
+    //    display: none;
   }
 
   .section_map-info {
@@ -318,7 +339,7 @@
     padding: 30px 30px 6px;
   }
 
-/*
+  /*
   .section_map-item {
     font-size: 11px;
     line-height: 14px;
@@ -330,9 +351,10 @@
 
   }
 */
-.section_map-item:last-child {
+  .section_map-item:last-child {
     margin-bottom: 24px;
-}
+  }
+
   .partners {
     margin-top: 0;
     padding-top: 40px;
@@ -408,18 +430,20 @@
       line-height: 40px;
       margin-bottom: 16px;
     }
-    
+
     p {
       font-size: 16px;
       line-height: 24px;
       margin-bottom: 25px;
     }
+
     a {
       &.phone {
         font-size: 24px;
-      line-height: 40px;
+        line-height: 40px;
         margin-bottom: 40px;
       }
+
       &.email {
         font-size: 16px;
       }
@@ -436,47 +460,57 @@
     width: 100%;
     margin-top: 0;
   }
+
   .footer {
     padding: 40px 0;
+
     .menu li {
       margin-right: 0;
       display: block;
     }
   }
+
   .footer-left {
     display: block;
   }
+
   .footer-left .footer-logo {
     margin-bottom: 16px;
   }
+
   .footer-right {
     margin-top: 71px;
     position: relative;
   }
+
   .footer-right svg {
     margin-right: 0;
     margin-bottom: 0;
     position: absolute;
     right: 55px;
     bottom: 15px;
-    
+
   }
+
   .footer-right p {
     text-align: right;
   }
-  
+
   .partners-list li:first-child {
     .partners-info {
       left: 80%;
     }
   }
+
   #tab1 .section_map-points li span {
     display: none;
   }
+
   .sea-group {
     display: flex !important;
   }
-/*  #tab2 .section_map-points li:nth-child(9) {
+
+  /*  #tab2 .section_map-points li:nth-child(9) {
     display: -ms-flexbox;
     display: flex;
     top: 24.861111vw;
@@ -488,28 +522,30 @@
     top: 21.888889vw;
     left: 84.347222vw;
 }*/
-  
-  
- .section_map-points li .info {
-    background: rgba(255, 255, 255,.9);
-   padding: 3px;
-   position: relative;
-   z-index: 87;
-   font-size: 10px;
-   line-height: 1;
-   position: absolute;
-   bottom: 100% !important;
-   left: 50% !important;
-   transform: translateX(-50%);
+
+
+  .section_map-points li .info {
+    background: rgba(255, 255, 255, .9);
+    padding: 3px;
+    position: relative;
+    z-index: 87;
+    font-size: 10px;
+    line-height: 1;
+    position: absolute;
+    bottom: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%);
   }
-  
+
   .section_map-points {
     li {
       &.factories-item {
         span {
-//          display: block !important; 
+          //          display: block !important; 
         }
       }
     }
   }
+
+
 }
