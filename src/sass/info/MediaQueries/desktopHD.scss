@@ -5,7 +5,13 @@
 
   & {
     .nav {
-      background: linear-gradient(180deg, #000 0, #000 100%);
+//      background: linear-gradient(180deg, #000 0, #000 100%);
+      max-width: 1600px;
+      left: 50%;
+      transform: translateX(-50%);
+      &.fixed {
+        max-width: 100%;
+      }
     }
 
     .section_map-info {
