@@ -66,16 +66,7 @@ $(document).ready(function () {
     $('.nav').addClass('fixed');
   }
 
-  $('.scroll').click(function (e) {
-    event.preventDefault();
-    var id = $(this).attr('href'),
-      top = $(id).offset().top;
 
-    $('body,html').animate({
-      scrollTop: top - 80
-    }, 1500);
-
-  });
 
 
   $('.section_map-nav li ').click(function (e) {
