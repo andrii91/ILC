@@ -260,7 +260,7 @@ $(document).ready(function () {
 
   }
   if ($(window).width() < 768) {
-    $('#menu').prepend('<li id="mobli"><a href="/">Home</a></li>')
+    $('#menu').prepend('<li id="mobli"><a href="#top" class="scroll">Home</a></li>')
 
   } else {
     $('#mobli').remove();
