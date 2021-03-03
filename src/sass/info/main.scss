@@ -532,6 +532,7 @@ p {
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: center;
+  max-width: 550px;
   //    justify-content: center;
 
   position: relative;
@@ -1064,9 +1065,10 @@ p {
     font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 30px;
     color: #000000;
+    margin-bottom: 30px;
   }
 }
 

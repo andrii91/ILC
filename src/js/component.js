@@ -106,6 +106,14 @@ $(document).ready(function () {
     if ($(window).width() > 1023) {
       var options = {
         zoom: 16,
+     /*   panControl: false,
+        zoomControl: false,
+        mapTypeControl: false,
+        scaleControl: false,
+        streetViewControl: false,
+        overviewMapControl: false,
+        rotateControl: false,*/
+        disableDefaultUI: true,
         center: {
           lat: 34.6981856,
           lng: 33.0682552
@@ -116,6 +124,7 @@ $(document).ready(function () {
     } else {
       var options = {
         zoom: 17,
+        disableDefaultUI: true,
         center: {
           lat: 34.6984635,
           lng: 33.0629015
