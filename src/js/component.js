@@ -142,8 +142,8 @@ $(document).ready(function () {
 
       {
         coordinates: {
-          lat: 34.69856543428218,
-          lng: 33.06293090654742
+          lat: 34.698464,
+          lng: 33.062902
         },
         info: '<h6>Agiou Athanasiou 62-201, BG WayWin Plaza, 4102 Limassol, Cyprus</h6> '
                     }];
