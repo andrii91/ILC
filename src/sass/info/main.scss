@@ -111,6 +111,7 @@ body {
   &:before {
     content: "";
     background: rgba(246, 118, 54, 0.1);
+    -webkit-backdrop-filter: blur(13.5556px);
     backdrop-filter: blur(13.5556px);
     transform: skewX(-30deg);
     width: 100%;
@@ -469,6 +470,7 @@ p {
   &:after {
     content: "";
     background: rgba(225, 198, 178, 0.11);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     width: 80vw;
     height: 177px;
@@ -540,6 +542,7 @@ p {
   &:before {
     content: "";
     background: rgba(246, 118, 54, 0.1);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     z-index: 0;
     transform: skewX(-30deg);
@@ -950,11 +953,11 @@ p {
 
     &:first-child {
       //      margin-left: 0;
-      /*.partners-info {
+      .partners-info {
       transform: translateX(0%);
-        left: 10px;
+        left: 0px;
         
-      }*/
+      }
     }
 
     &:last-child {
@@ -1159,6 +1162,7 @@ p {
   z-index: 3;
   max-width: 692px;
   background: rgba(201, 201, 201, 0.3);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   padding: 123px 80px 128px 118px;
   margin-left: auto;
@@ -1275,9 +1279,11 @@ p {
 
   svg {
     margin-right: 18px;
+    cursor: pointer;
   }
 
   p {
+    cursor: pointer;
     font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: normal;

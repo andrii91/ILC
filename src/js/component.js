@@ -89,9 +89,10 @@ $(document).ready(function () {
 
     /* 
      $(this).addClass('active visible animated fadeIn');
-
      $($(this).find('a').attr('href')).addClass('active visible animated fadeIn');
-     $('[data-tab="'+$(this).find('a').attr('href')+'"]').addClass('active visible animated fadeIn');*/
+     $('[data-tab="'+$(this).find('a').attr('href')+'"]').addClass('active visible animated fadeIn');
+     
+     */
   })
 
 
@@ -105,18 +106,18 @@ $(document).ready(function () {
 
     if ($(window).width() > 1023) {
       var options = {
-        zoom: 16,
-     /*   panControl: false,
+        zoom: 15,
+        /*panControl: false,
         zoomControl: false,
         mapTypeControl: false,
         scaleControl: false,
         streetViewControl: false,
         overviewMapControl: false,
         rotateControl: false,*/
-        disableDefaultUI: true,
+        fullscreenControl: false,
         center: {
-          lat: 34.6981856,
-          lng: 33.0682552
+          lat: 34.6958132,
+          lng: 33.0831445
         }
 
       };
@@ -124,7 +125,8 @@ $(document).ready(function () {
     } else {
       var options = {
         zoom: 17,
-        disableDefaultUI: true,
+//        disableDefaultUI: true,
+        fullscreenControl: false,
         center: {
           lat: 34.6984635,
           lng: 33.0629015
@@ -140,12 +142,11 @@ $(document).ready(function () {
 
       {
         coordinates: {
-          lat: 34.6984635,
-          lng: 33.0629015
+          lat: 34.69856543428218,
+          lng: 33.06293090654742
         },
         info: '<h6>Agiou Athanasiou 62-201, BG WayWin Plaza, 4102 Limassol, Cyprus</h6> '
                     }];
-
 
     for (var i = 0; i < markers.length; i++) {
       addMarker(markers[i]);
@@ -315,7 +316,10 @@ $(document).ready(function () {
     })
 
 
+  $('.footer-right').click(function () {
+    window.open($(this).find('a').attr('href'));
 
+  })
 
 
 });
