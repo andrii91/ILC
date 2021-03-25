@@ -1077,6 +1077,9 @@ p {
 
 .documents {
   padding: 75px 0 123px;
+  .container {
+    max-width: 1180px;
+  }
 }
 
 .documents-item {
@@ -1685,3 +1688,9 @@ p {
 
 
 
+
+.section_map-points {
+  .factories-item {
+    display: none !important;
+  }
+}
