@@ -279,6 +279,7 @@ body {
 .section_one-item {
   &.maxwidth {
     max-width: 535px;
+        margin-top: 45px;
   }
 
   &.bg {
@@ -382,7 +383,7 @@ p {
 .section_two {
   overflow: hidden;
   position: relative;
-  padding: 93px 0 91px;
+  padding: 93px 0 150px;
   position: relative;
   z-index: 2;
 
@@ -409,6 +410,8 @@ p {
 
   .maxwidth {
     max-width: 535px;
+    max-width: 575px;
+    padding-right: 40px;
     margin-left: auto;
   }
 }
@@ -1061,7 +1064,8 @@ p {
 }
 
 .service-item {
-  max-width: 534px;
+  max-width: 575px;
+  padding-right: 40px;
   margin-left: auto;
 
   p {
@@ -1072,6 +1076,22 @@ p {
     line-height: 30px;
     color: #000000;
     margin-bottom: 30px;
+    &:not(.large) {
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 20px;
+      &:before {
+        content: "—";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 30px;
+        color: #000000;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
   }
 }
 
