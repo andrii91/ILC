@@ -84,7 +84,7 @@
 
   .slick-slide img {
     width: auto;
-    min-height: 620px;
+    min-height: 695px;
     height: 100vh;
     max-width: inherit;
     //    transform: translateX(-50%);
@@ -563,7 +563,25 @@
       padding-right: 0px;
     }
   }
+
   .service-item {
     padding-right: 0;
   }
+
+
+  .head-slider {
+    height: 100vh;
+    min-height: 695px;
+  }
+  .section_one:before {
+    content: "";
+    background: url(../images/moba.svg) center no-repeat;
+    width: 102px;
+    height: 182px;
+    position: absolute;
+    bottom: inherit;
+    background-size: 100%;
+    left: 0;
+    top: 443px;
+}
 }
