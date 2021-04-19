@@ -1243,19 +1243,24 @@ p {
 }
 
 .footer {
-  padding: 80px 0;
+  padding: 80px 0 50px;
+  overflow: hidden;
   .container {
     position: relative;
     z-index: 3;
-    &:before {
-      content: "";
-      background: url('../images/arr_footer.svg') no-repeat center;
-      width: 358px;
-      height:  421px;
-      position: absolute;
-      bottom: -80px;
-      left: 130px;
-      z-index: -1;
+    .footer-left {
+      position: relative;
+      &:before {
+        content: "";
+        background: url('../images/arr_footer.svg') no-repeat center;
+        width: 358px;
+        height:  421px;
+        position: absolute;
+        bottom: -52px;
+        left: 0;
+        z-index: -1;
+      }
+      
     }
   }
 

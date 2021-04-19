@@ -21,7 +21,7 @@ $(document).ready(function () {
     autoplaySpeed: 5000,
     //    cssEase: 'linear'
   });
-  $('.partners-carousel').slick({
+/*  $('.partners-carousel').slick({
     arrows: false,
     dots: true,
     infinite: true,
@@ -51,7 +51,7 @@ $(document).ready(function () {
     }
   ]
     //    cssEase: 'linear'
-  });
+  });*/
 
   var widthLi = 170;
 
@@ -274,7 +274,7 @@ $(document).ready(function () {
   }
 
   $(window).resize(function () {
-    if ($(window).width() > 1200 && $('div').attr('id') == 'brands') {
+    if ($(window).width() > 1200 ) {
       $("#brands").make_carousel();
 
     }
@@ -296,7 +296,7 @@ $(document).ready(function () {
 
   })
 
-  if ($(window).width() > 1200  && $('div').attr('id') == 'brands') {
+  if ($(window).width() > 1200  ) {
     $("#brands").make_carousel();
 
   }
