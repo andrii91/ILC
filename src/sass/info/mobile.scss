@@ -573,6 +573,7 @@
     height: 100vh;
     min-height: 695px;
   }
+
   .section_one:before {
     content: "";
     background: url(../images/moba.svg) center no-repeat;
@@ -583,5 +584,38 @@
     background-size: 100%;
     left: 0;
     top: 443px;
-}
+  }
+
+  .partners-list:not(.slick-dots) {
+    .slick-dots {
+      padding: 0;
+    }
+
+    li {
+      margin: 0;
+      padding: 0 15px;
+    }
+  }
+
+  .partners-carousel {
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+  }
+
+  .slick-center {
+    .partners-info {
+      display: block !important;
+      text-align: center !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+    }
+  }
+
+  .section_map-new-img {
+    margin-top: -85px;
+    margin-bottom: -85px;
+  }
+  .form-feedback {
+    margin: 0;
+  }
 }

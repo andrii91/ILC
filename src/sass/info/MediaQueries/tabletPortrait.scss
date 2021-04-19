@@ -260,5 +260,13 @@
       padding-left: 45px;
 
     }
+    .slick-center {
+    .partners-info {
+      display: block !important;
+      text-align: center !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+    }
+  }
   }
 }
